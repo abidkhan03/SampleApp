@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  float: left;
+  text-align: center;
+  background: #be22b1;
+  padding: 10px 0;
+}
+
+.header h2 {
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 10px;
+}
+
+.content {
+  width: 100%;
+  float: left;
+  padding: 10px 20px;
+}
+
+.content-sbhdng {
+  width: 100%;
+  float: left;
+  font-size: 30px;
+  color: #010101;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-hdng {
+  width: 100%;
+  float: left;
+  font-size: 30px;
+  color: #010101;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.content-form-box {
+  width: 90%;
+  float: left;
+  padding: 10px 0;
+  position: relative;
+}
+
+.content-select-box {
+  width: 100%;
+  float: right;
+  padding: 10px 0;
+  position: relative;
+}
+
+.content-select-box label {
+  display: block;
+  text-align: right;
+  /* This will align the select box to the right */
+}
+
+.content-form-box a {
+  display: inline-block;
+  color: #be22b1;
+}
+
+.content-form-box-2 {
+  width: 45%;
+  float: left;
+  padding: 10px 0;
+  margin: 0 10px 0 0;
+}
+
+.content-select-box {
+  float: left;
+  padding-right: 10%;
+}
+
+.form-name {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-input {
+  width: 100%;
+  float: left;
+  font-size: 18px;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-bottom: 3px solid #ccc;
+  outline: none;
+}
+
+#addMeal-btn {
+  width: 16%;
+  float: left;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  margin: 15px;
+}
+
+#addMeal-btn:hover {
+  background: #a552a1;
+  font-weight: bold;
+}
+
+#addWorkout-btn {
+  width: 16%;
+  float: left;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  margin: 15px;
+}
+
+#addWorkout-btn:hover {
+  background: #a552a1;
+  font-weight: bold;
+}
+
+.form-img {
+  float: right;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 25px;
+}
+
+.form-btn {
+  width: 40%;
+  float: left;
+  background: #be22b1;
+  color: #fff;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 15px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+  margin-left: 25%;
+}
+
+.hdr-left-icon {
+  float: left;
+  border: 3px solid #fff;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.hdr-right-icon {
+  float: right;
+  margin: 0;
+}
+
+@property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.content-chart {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pie {
+  --p: 50;
+  --b: 22px;
+  --c: darkred;
+  --w: 400px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 5px;
+  place-content: center;
+  font-size: 106px !important;
+  line-height: 76px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #9857a9;
+}
+
+.pie span {
+  display: inline-block;
+  text-align: center;
+  font-size: 36px;
+  font-weight: regular;
+  color: #666;
+  font-family: sans-serif;
+}
+
+.pie img {
+  max-width: 100%;
+  display: inline-block;
+  margin: 0 0 20px;
+}
+
+.pie:before,
+.pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pie:before {
+  inset: 0;
+  background:
+    radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+  inset: calc(50% - var(--b)/2);
+  background: var(--c);
+  transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+
+.animate {
+  animation: p 1s .5s both;
+}
+
+.no-round:before {
+  background-size: 0 0, auto;
+}
+
+.no-round:after {
+  content: none;
+}
+
+@keyframes p {
+  from {
+    --p: 0
+  }
+}
+
+
+.content-cate-box {
+  width: 100%;
+  float: left;
+  padding: 50px 30px;
+  border-radius: 15px;
+  background: rgb(153, 87, 169);
+  background: -moz-linear-gradient(90deg, rgba(153, 87, 169, 1) 0%, rgba(207, 100, 193, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(153, 87, 169, 1) 0%, rgba(207, 100, 193, 1) 100%);
+  background: linear-gradient(90deg, rgba(153, 87, 169, 1) 0%, rgba(207, 100, 193, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9957a9", endColorstr="#cf64c1", GradientType=1);
+}
+
+.content-cate-box-icon {
+  width: 70%;
+  float: left;
+}
+
+.content-cate-box-add {
+  width: 30%;
+  float: right;
+  text-align: right;
+  font-size: 126px;
+  line-height: 160px;
+  color: #fff;
+}
+
+.content-cate-box-hdng {
+  width: 100%;
+  float: left;
+  font-size: 48px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px 0 0;
+}
+
+.content-cate-box-btn {
+  width: 100%;
+  float: left;
+  background: #be22b1;
+  color: #fff !important;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 15px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.intensity-box {
+  width: 100%;
+  float: left;
+  padding: 20px 0;
+  border: 3px solid #aaa;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.intensity-weight {
+  width: 100%;
+  float: left;
+  font-size: 42px;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+}
+
+.intensity-estimate {
+  width: 100%;
+  float: left;
+  font-size: 42px;
+  color: #666;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 0 15px;
+}
+
+.intensity-date {
+  width: 100%;
+  float: left;
+  font-size: 48px;
+  color: #a552a1;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 0 10px;
+}
+
+.intensity-date span {
+  float: right;
+  font-size: 40px;
+  color: #a552a1;
+}
+
+.intensity-checkbox {
+  float: right;
+  width: 40px;
+  height: 40px;
+  padding: 10px 20px 0 0;
+}
+
+.form-btn-btn {
+  width: 100%;
+  float: left;
+  background: #be22b1;
+  color: #fff;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 30px 0 0;
+}
+
+.form-btn:hover {
+  background: #be22b1;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Adjusted custom style for the navbar links */
+.navbar-nav .nav-link {
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  /* No background color */
+  margin: 0 5px;
+}
+
+.navbar-nav .nav-link.active {
+  background-color: #be22b1;
+  /* Dark blue shade for active link */
+  border-radius: 0;
+  /* No rounded corners */
+  color: white;
+  /* Set active link text color if needed */
+}
+
+/* Custom styles for non-active links */
+.navbar-nav .nav-link {
+  padding: 8px 15px;
+  /* Larger clickable area */
+  border-radius: 4px;
+  /* Slightly rounded corners for the clickable area */
+}
+
+.required-field::before {
+  content: "*";
+  color: red;
+}
